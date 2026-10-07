@@ -120,8 +120,8 @@ La navegación usa el *hash* de la URL:
 
 | Clave | Contenido |
 |---|---|
-| `uds-dashboard:data` | `{ products, customers, orders }` |
-| `uds-dashboard:prefs` | Tema, color de acento, empresa, usuario, umbral de stock, filas por página y estado del menú |
+| `dashboard:data` | `{ products, customers, orders }` |
+| `dashboard:prefs` | Tema, color de acento, empresa, usuario, umbral de stock, filas por página y estado del menú |
 
 Para empezar de cero puedes usar **Configuración → Datos y respaldo**, o borrar esas claves desde las herramientas de desarrollo del navegador (*Application → Local Storage*).
 

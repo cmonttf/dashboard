@@ -1,8 +1,8 @@
 // ---------------------------------------------------------------
 // MODEL · Constantes del dominio
 // ---------------------------------------------------------------
-export const STORAGE_KEY = 'uds-dashboard:data';
-export const PREFS_KEY = 'uds-dashboard:prefs';
+export const STORAGE_KEY = 'dashboard:data';
+export const PREFS_KEY = 'dashboard:prefs';
 export const STORAGE_QUOTA = 5 * 1024 * 1024; // ~5 MB típico por origen
 
 export const CATEGORIES = ['Electrónica', 'Accesorios', 'Oficina', 'Hogar'];

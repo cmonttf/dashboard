@@ -10,7 +10,7 @@
     <script>
         (function () {
             try {
-                var p = JSON.parse(localStorage.getItem('uds-dashboard:prefs')) || {};
+                var p = JSON.parse(localStorage.getItem('dashboard:prefs')) || {};
                 var dark = p.theme === 'dark' || (p.theme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
                 document.documentElement.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
             } catch (e) { }
