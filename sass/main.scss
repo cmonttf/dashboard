@@ -1,0 +1,8 @@
+// ---------------------------------------------------------------
+// Punto de entrada de estilos
+//   Compilar:  sass sass/main.scss css/main.css
+//   Desarrollo: sass --watch sass/main.scss css/main.css
+// ---------------------------------------------------------------
+@use 'base';
+@use 'layouts';
+@use 'components';

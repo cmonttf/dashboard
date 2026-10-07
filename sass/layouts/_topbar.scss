@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+// ---------------------------------------------------------------
+// Barra superior
+// ---------------------------------------------------------------
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  height: $topbar-height;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  background: color-mix(in srgb, var(--body-bg) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+
+  .page-heading {
+    min-width: 0;
+    h1 { font-size: 1.15rem; font-weight: 700; margin: 0; }
+    .breadcrumb {
+      margin: 0;
+      font-size: .78rem;
+      --bs-breadcrumb-divider-color: var(--muted);
+      .breadcrumb-item { color: var(--muted); }
+    }
+  }
+
+  @include below($bp-sm) { padding: 0 1rem; gap: .5rem; }
+}

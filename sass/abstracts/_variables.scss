@@ -1,0 +1,31 @@
+// ---------------------------------------------------------------
+// Variables globales
+// ---------------------------------------------------------------
+$sidebar-width: 264px;
+$sidebar-mini-width: 80px;
+$topbar-height: 68px;
+$radius: .75rem;
+$radius-lg: 1rem;
+$transition: .25s cubic-bezier(.4, 0, .2, 1);
+$bp-sm: 576px;
+$bp-lg: 992px;
+$accent-default: #6366f1;
+
+$font-stack: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+// Colores por estado de pedido (también usados en js/app.js)
+$status-colors: (
+  'pendiente': #f59e0b,
+  'enviado':   #0ea5e9,
+  'entregado': #10b981,
+  'cancelado': #f43f5e,
+);
+
+// Tonos de las tarjetas KPI
+$kpi-tones: (
+  'indigo':  #6366f1,
+  'emerald': #10b981,
+  'amber':   #f59e0b,
+  'rose':    #f43f5e,
+  'sky':     #0ea5e9,
+);

@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+// ---------------------------------------------------------------
+// Modales
+// ---------------------------------------------------------------
+.modal-content {
+  border: 0;
+  border-radius: $radius-lg;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-header,
+.modal-footer { border-color: var(--border); }
+
+.modal-backdrop.show { opacity: .4; }

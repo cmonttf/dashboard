@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+// ---------------------------------------------------------------
+// Tablas y paginación
+// ---------------------------------------------------------------
+.table-modern {
+  --bs-table-bg: transparent;
+  --bs-table-hover-bg: rgba(var(--accent-rgb), .04);
+  margin: 0;
+  font-size: .9rem;
+
+  thead th {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--muted);
+    font-weight: 600;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    padding: .8rem 1rem;
+    white-space: nowrap;
+
+    &.sortable {
+      cursor: pointer;
+      user-select: none;
+      &:hover { color: var(--accent); }
+      .bi { font-size: .7rem; margin-left: .25rem; }
+    }
+  }
+
+  td {
+    padding: .85rem 1rem;
+    vertical-align: middle;
+    border-color: var(--border);
+    color: var(--text);
+  }
+
+  tbody tr:last-child td { border-bottom: 0; }
+
+  .row-actions {
+    white-space: nowrap;
+    .btn { padding: .25rem .5rem; }
+  }
+}
+
+.page-link {
+  color: var(--accent);
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+.active > .page-link,
+.page-link.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}

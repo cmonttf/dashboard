@@ -1,0 +1,85 @@
+@use 'sass:color';
+@use '../abstracts' as *;
+
+// ---------------------------------------------------------------
+// Paneles, tarjetas KPI y mosaicos de estadística
+// ---------------------------------------------------------------
+.panel {
+  @include surface($radius-lg);
+  height: 100%;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1.1rem 1.35rem;
+    border-bottom: 1px solid var(--border);
+    h2 { font-size: 1rem; font-weight: 600; margin: 0; }
+    small { color: var(--muted); }
+  }
+  &-body { padding: 1.35rem; }
+}
+
+.kpi {
+  @include surface($radius-lg);
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem 1.35rem;
+  transition: transform $transition, box-shadow $transition;
+
+  &:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+  .kpi-icon {
+    @include flex-center;
+    width: 46px;
+    height: 46px;
+    border-radius: .8rem;
+    font-size: 1.3rem;
+  }
+  .kpi-label { font-size: .82rem; color: var(--muted); font-weight: 500; }
+  .kpi-value { font-size: 1.6rem; font-weight: 700; letter-spacing: -.02em; margin: .2rem 0; }
+  .kpi-delta { font-size: .78rem; font-weight: 600; }
+
+  // Círculo decorativo
+  &::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    opacity: .07;
+  }
+
+  @each $name, $color in $kpi-tones {
+    &.tone-#{$name} {
+      .kpi-icon { background: color.change($color, $alpha: .12); color: $color; }
+      &::after { background: $color; }
+    }
+  }
+}
+
+.stat-tile {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: $radius;
+  padding: 1rem;
+  .value { font-size: 1.35rem; font-weight: 700; }
+  .label { font-size: .8rem; color: var(--muted); }
+}
+
+.chart-box {
+  position: relative;
+  height: 300px;
+  &.sm { height: 240px; }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  .bi { font-size: 2.5rem; display: block; margin-bottom: .5rem; opacity: .5; }
+}

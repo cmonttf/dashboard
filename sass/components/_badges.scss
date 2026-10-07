@@ -1,0 +1,59 @@
+@use 'sass:color';
+@use '../abstracts' as *;
+
+// ---------------------------------------------------------------
+// Avatares, estados, chips y barras de progreso
+// ---------------------------------------------------------------
+.avatar {
+  @include flex-center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: .78rem;
+  font-weight: 700;
+  color: #fff;
+  &.sm { width: 30px; height: 30px; font-size: .7rem; }
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .28rem .7rem;
+  border-radius: 2rem;
+  font-size: .75rem;
+  font-weight: 600;
+  border: 0;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  @each $name, $color in $status-colors {
+    &.s-#{$name} { background: color.change($color, $alpha: .13); color: $color; }
+  }
+}
+
+.chip {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: .4rem;
+  font-size: .75rem;
+  font-weight: 500;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.progress-thin {
+  height: 6px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  .progress-bar { border-radius: 6px; background: var(--accent); }
+}

@@ -1,0 +1,95 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+// ---------------------------------------------------------------
+// Botones (Bootstrap + variantes propias)
+// ---------------------------------------------------------------
+.btn { border-radius: .6rem; font-weight: 500; }
+
+.btn-primary {
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--accent), #000 12%);
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--accent), #000 12%);
+  --bs-btn-active-bg: color-mix(in srgb, var(--accent), #000 20%);
+  --bs-btn-active-border-color: color-mix(in srgb, var(--accent), #000 20%);
+  --bs-btn-disabled-bg: var(--accent);
+  --bs-btn-disabled-border-color: var(--accent);
+  --bs-btn-focus-shadow-rgb: var(--accent-rgb);
+  box-shadow: 0 4px 14px rgba(var(--accent-rgb), .3);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-bg: var(--accent);
+  --bs-btn-hover-border-color: var(--accent);
+  --bs-btn-active-bg: var(--accent);
+  --bs-btn-active-border-color: var(--accent);
+}
+
+.btn-soft {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  &:hover { border-color: rgba(var(--accent-rgb), .5); color: var(--accent); }
+}
+
+.icon-btn {
+  @include flex-center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: .65rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.05rem;
+  transition: all $transition;
+
+  &:hover { color: var(--accent); border-color: rgba(var(--accent-rgb), .45); }
+
+  .dot {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: map.get($status-colors, 'cancelado');
+    border: 2px solid var(--surface);
+  }
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .25rem .5rem .25rem .25rem;
+  border-radius: 2rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  &:hover { border-color: rgba(var(--accent-rgb), .45); }
+  .name { font-size: .85rem; font-weight: 600; }
+}
+
+// Filtros tipo "segmented control"
+.segmented {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  padding: .25rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: .7rem;
+  .btn {
+    border: 0;
+    padding: .3rem .8rem;
+    font-size: .82rem;
+    color: var(--muted);
+    box-shadow: none;
+    &.active { background: var(--surface); color: var(--accent); box-shadow: var(--shadow-sm); }
+  }
+}

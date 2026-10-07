@@ -1,0 +1,29 @@
+// ---------------------------------------------------------------
+// Mixins reutilizables
+// ---------------------------------------------------------------
+@mixin below($bp) {
+  @media (max-width: $bp - .02) { @content; }
+}
+
+@mixin above($bp) {
+  @media (min-width: $bp) { @content; }
+}
+
+@mixin surface($radius: 1rem) {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: $radius;
+  box-shadow: var(--shadow-sm);
+}
+
+@mixin thin-scrollbar($thumb: rgba(148, 163, 184, .35)) {
+  scrollbar-width: thin;
+  scrollbar-color: $thumb transparent;
+  &::-webkit-scrollbar { width: 6px; height: 6px; }
+  &::-webkit-scrollbar-thumb { background: $thumb; border-radius: 6px; }
+}
+
+@mixin flex-center {
+  display: grid;
+  place-items: center;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dashboard con Vue 3 (sin Vite), Bootstrap 5.3, Sass y LocalStorage",
+  "scripts": {
+    "sass": "sass sass/main.scss css/main.css --no-source-map",
+    "sass:watch": "sass --watch sass/main.scss css/main.css"
+  }
+}

@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+// ---------------------------------------------------------------
+// Dropdowns de Bootstrap y menú de notificaciones
+// ---------------------------------------------------------------
+.dropdown-menu {
+  border: 1px solid var(--border);
+  border-radius: $radius;
+  box-shadow: var(--shadow-lg);
+  padding: .4rem;
+  background: var(--surface);
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    border-radius: .45rem;
+    padding: .5rem .75rem;
+    font-size: .9rem;
+    &:active, &.active { background: var(--accent); color: #fff; }
+  }
+}
+
+.notif-menu {
+  width: 320px;
+
+  .notif-item {
+    align-items: flex-start;
+    white-space: normal;
+  }
+  .notif-icon {
+    @include flex-center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: .55rem;
+  }
+}
